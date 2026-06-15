@@ -52,7 +52,7 @@ const About = () => {
         <div className="flex flex-col items-center gap-6">
           <img
             ref={imgRef}
-            src="images/pfp.png"
+            src="images/pfp.jpg"
             alt="Rishit Raman"
             className="w-140 h-140 rounded-3xl object-cover"
           />

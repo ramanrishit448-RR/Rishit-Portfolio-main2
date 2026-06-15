@@ -102,7 +102,7 @@ const Works = () => {
               }}
               className="fixed hidden md:block pointer-events-none opacity-0 -z-10"
               style={{
-                width: "300px",
+                width: "500px",
                 height: "300px",
                 transform: "translate(-50%, -50%)",
               }}
@@ -116,7 +116,17 @@ const Works = () => {
 
             {/* title */}
             <div
-              className={`flex justify-between px-1 sm:px-1 md:px-3 lg:px-6 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white ultra-small-screen ${hoveredIndex === index ? "bg-black text-white" : ""}`}
+              className={`flex justify-between px-1 sm:px-1 md:px-3 lg:px-6 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white ultra-small-screen ${hoveredIndex === index ? "text-white" : ""}`}
+              style={
+                hoveredIndex === index
+                  ? {
+                      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${project.bgImage})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      backgroundAttachment: "fixed",
+                    }
+                  : {}
+              }
             >
               <h2 className="lg:text-[32px] text-[26px] leading-none transition-all duration-300">
                 {hoveredIndex === index ? project.description : project.name}
