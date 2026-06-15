@@ -115,9 +115,9 @@ const Works = () => {
             </div>
 
             {/* title */}
-            <div className="flex justify-between px-1 sm:px-1 md:px-3 lg:px-6 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white ultra-small-screen">
-              <h2 className="lg:text-[32px] text-[26px] leading-none">
-                {project.name}
+            <div className={`flex justify-between px-1 sm:px-1 md:px-3 lg:px-6 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white ultra-small-screen ${hoveredIndex === index ? 'bg-black text-white' : ''}`}>
+              <h2 className="lg:text-[32px] text-[26px] leading-none transition-all duration-300">
+                {hoveredIndex === index ? project.description : project.name}
               </h2>
               <Icon icon="lucide:arrow-up-right" className="md:size-6 size-5" />
             </div>
