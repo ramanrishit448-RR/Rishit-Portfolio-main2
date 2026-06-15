@@ -49,12 +49,21 @@ const About = () => {
         withScrollTrigger={true}
       />
       <div className="flex flex-col items-center justify-between gap-16 px-1 sm:px-1 md:px-3 lg:px-6 pb-16 text-xl font-light tracking-wide lg:flex-row md:text-2xl lg:text-3xl text-white/60 ultra-small-screen">
-        <img
-          ref={imgRef}
-          src="images/pfp.png"
-          alt="Rishit Raman"
-          className="w-md rounded-3xl"
-        />
+        <div className="flex flex-col items-center gap-6">
+          <img
+            ref={imgRef}
+            src="images/pfp.png"
+            alt="Rishit Raman"
+            className="w-140 h-140 rounded-3xl object-cover"
+          />
+          <a
+            href="/resume.pdf"
+            download="Rishit_Raman_Resume"
+            className="px-8 py-3 text-sm font-light uppercase tracking-widest text-white border border-white/30 rounded-lg hover:border-white/80 hover:bg-white/5 transition-all duration-300"
+          >
+            Download Resume
+          </a>
+        </div>
         <div className="w-full">
           <AnimatedTextLines text={aboutText} className={"w-full"} />
           <div className="mt-4 space-y-2">
