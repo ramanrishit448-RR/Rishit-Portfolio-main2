@@ -9,7 +9,7 @@ const About = () => {
   const text = `Software Engineering student passionate about
     building scalable backend systems and AI-powered
     applications from ground-up.`;
-  const aboutText = `Hi I am Rshit Raman 
+  const aboutText = `Hi I am Rishit Raman 
   I build production-grade solutions spanning backend systems, AI applications, and modern web development. From engineering a C++17 vector database with HNSW indexing and O(log N) search to deploying full-stack RAG pipelines, I'm committed to creating systems that scale.
 
   Experienced with Next.js, tRPC, Prisma, and LLM APIs (OpenAI, Gemini). Currently exploring the intersection of databases, machine learning, and real-time systems.
