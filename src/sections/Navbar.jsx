@@ -3,6 +3,7 @@ import { socials } from "../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Link } from "react-scroll";
+import { Icon } from "@iconify/react";
 
 const Navbar = () => {
   const navRef = useRef(null);
@@ -14,6 +15,15 @@ const Navbar = () => {
   const iconTl = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const [showBurger, setShowBurger] = useState(true);
+
+  const getSocialIcon = (socialName) => {
+    const iconMap = {
+      Instagram: "mdi:instagram",
+      LinkedIn: "mdi:linkedin",
+      GitHub: "mdi:github",
+    };
+    return iconMap[socialName] || "mdi:link";
+  };
 
   useGSAP(() => {
     gsap.set(navRef.current, { xPercent: 100 });
@@ -128,9 +138,15 @@ const Navbar = () => {
         >
           <div className="font-light">
             <p className="tracking-wider text-white/50">E-mail</p>
-            <p className="text-sm tracking-widest lowercase text-pretty">
-              ramanrisiht448@gmail.com
-            </p>
+            <a
+              href="https://mail.google.com/mail/?to=ramanrishit448@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-3xl hover:text-white/80 transition-colors duration-200 inline-block"
+              title="Send Email"
+            >
+              <Icon icon="mdi:email" />
+            </a>
           </div>
           <div className="font-light">
             <p className="tracking-wider text-white/50">Social Media</p>
@@ -140,11 +156,12 @@ const Navbar = () => {
                   <a
                     key={index}
                     href={social.href}
-                    className="text-sm tracking-widest uppercase hover:text-white transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-2xl hover:text-white/80 transition-colors duration-200 hover:scale-110 transform"
+                    title={social.name}
                   >
-                    {"{ "}
-                    {social.name}
-                    {" }"}
+                    <Icon icon={getSocialIcon(social.name)} />
                   </a>
                 ))
               ) : (

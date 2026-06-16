@@ -3,6 +3,7 @@ import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 import Marquee from "../components/Marquee";
 import { socials } from "../constants";
 import gsap from "gsap";
+import { Icon } from "@iconify/react";
 
 const Contact = () => {
   const text = `Got a question, how or project Idea?
@@ -14,6 +15,15 @@ const Contact = () => {
     "Let's Chat",
     "Get In Touch",
   ];
+  const getSocialIcon = (socialName) => {
+    const iconMap = {
+      Instagram: "mdi:instagram",
+      LinkedIn: "mdi:linkedin",
+      GitHub: "mdi:github",
+    };
+    return iconMap[socialName] || "mdi:link";
+  };
+
   useGSAP(() => {
     gsap.from(".social-link", {
       y: 100,
@@ -57,23 +67,27 @@ const Contact = () => {
             <div className="social-link">
               <h2>Phone</h2>
               <div className="w-full h-px my-2 bg-white/30" />
-              <p className="text-xl lowercase md:text-2xl lg:text-3xl">
+              <a
+                href="tel:+918092273454"
+                className="text-xl lowercase md:text-2xl lg:text-3xl hover:text-white/80 transition-colors duration-200"
+              >
                 +91 8092273454
-              </p>
+              </a>
             </div>
             <div className="social-link">
               <h2>Social Media</h2>
               <div className="w-full h-px my-2 bg-white/30" />
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-6">
                 {socials.map((social, index) => (
                   <a
                     key={index}
                     href={social.href}
-                    className="text-xs leading-loose tracking-wides uppercase md:text-sm hover:text-white/80 transition-colors duration-200"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-4xl hover:text-white/80 transition-colors duration-200 hover:scale-110 transform"
+                    title={social.name}
                   >
-                    {"{ "}
-                    {social.name}
-                    {" }"}
+                    <Icon icon={getSocialIcon(social.name)} />
                   </a>
                 ))}
               </div>
