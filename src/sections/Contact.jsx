@@ -162,8 +162,9 @@ const Contact = () => {
                 Get In Touch
               </h3>
               <p className="text-white/60 text-lg md:text-xl font-light leading-relaxed">
-                Interested in collaborating, internships, or software
-                development opportunities? Feel free to reach out.
+                Have a project in mind? I build production-grade solutions
+                backend systems, AI applications, and modern web development.
+                Let's create something remarkable together.
               </p>
             </div>
 
